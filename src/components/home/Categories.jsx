@@ -11,7 +11,7 @@ const Categories = () => {
   }, [dispatch]);
 
   return (
-    <div className="w-1/6 bg-gray-100 p-4">
+    <div className="w-1/6 bg-gray-100 p-4 max-h-screen">
       <div className='border-b pb-1 text-xl font-bold'>CATEGORY</div>
       <div className="capitalize">
         {categories.map((category, index) => {
