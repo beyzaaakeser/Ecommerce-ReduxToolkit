@@ -18,6 +18,17 @@ export const getDetailProduct = createAsyncThunk('getproduct', async (id) => {
   return data;
 });
 
+export const getCategoryProducts = createAsyncThunk(
+  'getcategory',
+  async (category) => {
+    const response = await fetch(
+      `https://fakestoreapi.com/products/category/${category}`
+    );
+    const data = await response.json();
+    return data;
+  }
+);
+
 const productSlice = createSlice({
   name: 'products',
   initialState,
@@ -43,7 +54,18 @@ const productSlice = createSlice({
     builder.addCase(getDetailProduct.rejected, (state, action) => {
       state.productDetailStatus = STATUS.FAIL;
     });
+
+    builder.addCase(getCategoryProducts.pending, (state, action) => {
+      state.productsStatus = STATUS.LOADING;
+    });
+    builder.addCase(getCategoryProducts.fulfilled, (state, action) => {
+      state.productsStatus = STATUS.SUCCESS;
+      state.products = action.payload;
+    });
+    builder.addCase(getCategoryProducts.rejected, (state, action) => {
+      state.productsStatus = STATUS.FAIL;
+    });
   },
 });
 
-export default productSlice.reducer
+export default productSlice.reducer;

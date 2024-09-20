@@ -11,6 +11,25 @@ body {
   font-family: 'Nunito', sans-serif;
   min-height: 100vh;
 }
+
+.paginate {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  cursor: pointer;
+}
+
+.paginate li {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgb(159, 159, 159);
+  margin: 5px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* From Uiverse.io by SouravBandyopadhyay */
 .hourglassBackground {
   position: relative;

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Product = ({ product }) => {
   return (
-    <div className="w-[450px] p-3 mb-2 mx-2 border rounded-md relative cursor-pointer">
+    <div className="w-[430px] p-3 mb-2 mx-2 border rounded-md relative cursor-pointer">
       <div className="text-xl font-bold absolute rounded-md top-2 right-2 bg-red-600 text-white px-3 py-2 m-1">
         {product?.price} <span className="text-md">₺</span>
       </div>
