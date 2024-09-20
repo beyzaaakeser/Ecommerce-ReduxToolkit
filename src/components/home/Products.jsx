@@ -8,12 +8,12 @@ import Loader from '../loader/Loader';
 import Product from './Product';
 import ReactPaginate from 'react-paginate';
 
-const Products = ({ category,sort }) => {
+const Products = ({ category, sort }) => {
   const dispatch = useDispatch();
   const { products, productsStatus } = useSelector((store) => store.products);
 
   console.log(sort);
-  
+
   useEffect(() => {
     if (category) {
       dispatch(getCategoryProducts(category));
@@ -44,9 +44,17 @@ const Products = ({ category,sort }) => {
       ) : (
         <>
           <div className="flex flex-wrap gap-4 ms-2 ">
-            {currentItems?.map((product, index) => (
-              <Product key={index} product={product} />
-            ))}
+            {currentItems
+              ?.sort((a, b) =>
+                sort === 'Inc'
+                  ? a.price - b.price
+                  : sort === 'Dec'
+                  ? b.price - a.price
+                  : null
+              )
+              .map((product, index) => (
+                <Product key={index} product={product} />
+              ))}
           </div>
           <ReactPaginate
             className="paginate"
