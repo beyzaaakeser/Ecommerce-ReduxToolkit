@@ -1,20 +1,30 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/slices/cartSlice';
 
 const DetailComp = ({ productDetail }) => {
-  console.log(productDetail);
+  const dispatch = useDispatch();
+
   const [quantity, setQuantity] = useState(0);
 
   const decrement = () => {
-    if (quantity > 0)  setQuantity(quantity - 1);
-    
+    if (quantity > 0) setQuantity(quantity - 1);
   };
   const increment = () => {
-    if(quantity < productDetail?.rating?.count ) setQuantity(quantity + 1);
+    if (quantity < productDetail?.rating?.count) setQuantity(quantity + 1);
   };
 
-  const addBasket = () => { 
-    
-  }
+  const addBasket = () => {
+    dispatch(
+      addToCart({
+        id: productDetail?.id,
+        title: productDetail?.title,
+        image: productDetail?.image,
+        quantity:productDetail?.quantity,
+        price:productDetail?.price
+      })
+    );
+  };
   return (
     <div className="flex gap-20 mt-36">
       <img
@@ -47,7 +57,8 @@ const DetailComp = ({ productDetail }) => {
           </div>
         </div>
         <div className="flex justify-end">
-          <div onClick={addBasket}
+          <div
+            onClick={addBasket}
             className="border w-[150px] h-10 flex items-center justify-center text-xl rounded-md
          bg-gray-100 cursor-pointer mt-4 "
           >
