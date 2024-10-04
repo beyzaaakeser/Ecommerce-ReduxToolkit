@@ -1,8 +1,36 @@
-# React + Vite
+<h1>My Ecommerce App - Redux Toolkit</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I used Redux Toolkit and React to create an online store. The program allows users to list products by category and sort products with numerous filtering options. Users have the option to arrange products based on price, either from low to high or from high to low. With the Redux Toolkit, centralized state management is made possible. The Redux store is where cart activities (product insertion, removal, and quantity update) are stored, ensuring that data is synchronized across all application pages. On the cart page, users can add and delete products while concurrently updating the product quantities. The DOM instantly adjusts in response to these changes.
 
-Currently, two official plugins are available:
+<h2> The following technologies were used in the frontend development phase of my site: </h2>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React (Vite)
+- React-Redux
+- React-Router-Dom
+- Reduxjs/Toolkit
+- React-Icons
+- Splidejs / React-Splide
+
+<h4>GIF</h5>
+
+![](/public/shopping-wind-gif.gif)
+
+<h4>IMAGES</h4>
+
+<h5>Main Page</h5>
+
+![](/public/main.png)
+
+<h5>Product Detail Page</h5>
+
+![](/public/product-detail.png)
+
+<h5>Category Page Images</h5>
+
+![](/public/category2.png)
+
+![](/public/category1.png)
+
+<h5>Basket Page </h5>
+
+![](/public/basket.png)
